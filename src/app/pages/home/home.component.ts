@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
 
+  private originalViewportContent: string | null = null;
+
+  ngOnInit() {
+    const viewport = document.querySelector('meta[name=viewport]');
+    if (viewport) {
+      this.originalViewportContent = viewport.getAttribute('content');
+      viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+    }
+  }
+
+  ngOnDestroy() {
+    const viewport = document.querySelector('meta[name=viewport]');
+    if (viewport && this.originalViewportContent) {
+      viewport.setAttribute('content', this.originalViewportContent);
+    }
+  }
 }

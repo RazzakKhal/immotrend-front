@@ -1,17 +1,19 @@
 :host {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* centre horizontalement */
+    align-items: flex-start; /* aligne en haut */
     height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
+    padding-top: 50px; /* marge en haut */
     background-image: url('/background.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
-    background-attachment: scroll; /* Fond qui bouge avec le zoom */
+    background-attachment:scroll; /* Fond qui bouge avec le zoom */
     overflow: hidden;
+    
   }
   
   .container {
@@ -60,7 +62,18 @@
     cursor: pointer;
     margin-bottom: 10px;
     font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease;
   }
+  
+  .btn:hover {
+    background-color: #6f6a73; /* plus clair au survol */
+    transform: scale(1.03);
+  }
+  
+  .btn:active {
+    transform: scale(0.97);
+  }
+  
   
   @media screen and (max-width: 600px) {
     .container {
