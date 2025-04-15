@@ -1,0 +1,81 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: url('/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; /* Fond qui bouge avec le zoom */
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+
+  }
+  
+  .logo img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+    margin: 25px 0 20px;
+  }
+  
+  .buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+    max-width: 320px;
+    flex-grow: 0.8; 
+    justify-content: center;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 100px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: #504c54;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+      max-width: 320px;
+      padding: 15px;
+    }
+  
+    .logo img {
+      width: 80px;
+    }
+  
+    .btn {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  
